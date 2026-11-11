@@ -5,59 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NK STUDY HUB</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: #f0f4f8; color: #333; }
-        .header { background: white; padding: 15px; text-align: center; border-bottom: 1px solid #e2e8f0; font-size: 18px; font-weight: bold; color: #2563eb; }
-        .container { max-width: 600px; margin: 0 auto; padding: 15px; }
-        .title-box { text-align: center; margin: 20px 0; }
-        .title-box h1 { font-size: 24px; color: #1e3a8a; margin: 0; font-style: italic; }
-        .title-box p { font-size: 14px; color: #64748b; margin: 5px 0 0 0; font-style: italic; }
-        .nav-home { font-size: 14px; color: #2563eb; font-weight: bold; margin-bottom: 15px; cursor: pointer; display: inline-block; }
-        .search-box { background: white; border: 1px solid #cbd5e1; border-radius: 25px; padding: 10px 15px; display: flex; align-items: center; margin-bottom: 15px; }
-        .search-box input { border: none; outline: none; width: 100%; font-size: 14px; background: transparent; margin-left: 8px; }
-        .alert-box { background: #fef3c7; border: 1px solid #fde68a; color: #92400e; padding: 10px 15px; border-radius: 8px; font-size: 13px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: #f7f3ee; color: #3d352d; }
         
-        .card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; border: 1px solid #e2e8f0; text-decoration: none; cursor: pointer; color: inherit; }
+        /* Top Navigation Bar */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #f7f3ee; }
+        .menu-btn, .notif-btn { background: white; border: 1px solid #e6dbcc; width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); cursor: pointer; }
+        .site-title-top { font-weight: 700; font-size: 15px; letter-spacing: 0.5px; color: #2c241d; text-transform: uppercase; }
+
+        .container { max-width: 600px; margin: 0 auto; padding: 0 15px 30px 15px; }
+
+        /* Hero Banner Card */
+        .hero-card { background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%); border: 1px solid #e6dbcc; border-radius: 20px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(184, 134, 11, 0.05); display: flex; align-items: center; }
+        .hero-logo { width: 65px; height: 65px; background: #fff8e8; border: 1px solid #f3e5c8; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; margin-right: 15px; flex-shrink: 0; }
+        .hero-info h2 { margin: 0; font-size: 18px; color: #8B6508; font-style: italic; font-weight: 800; }
+        .hero-info p { margin: 4px 0 0 0; font-size: 12px; color: #8c7b6c; font-weight: 500; font-style: italic; }
+
+        /* Stats Row */
+        .stats-row { display: flex; gap: 12px; margin-bottom: 20px; }
+        .stat-box { flex: 1; background: white; border: 1px solid #e6dbcc; border-radius: 16px; padding: 15px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
+        .stat-box h3 { margin: 0; font-size: 18px; color: #8B6508; font-weight: 800; }
+        .stat-box span { font-size: 10px; color: #8c7b6c; font-weight: 700; letter-spacing: 0.5px; }
+
+        /* Search Box */
+        .search-box { background: white; border: 1px solid #e6dbcc; border-radius: 25px; padding: 12px 20px; display: flex; align-items: center; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .search-box input { border: none; outline: none; width: 100%; font-size: 14px; background: transparent; margin-left: 10px; color: #3d352d; }
+
+        .section-heading { font-size: 18px; font-weight: 800; color: #2c241d; margin: 20px 0 12px 5px; }
+
+        /* Cards Style */
+        .card { background: white; border-radius: 16px; padding: 15px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; align-items: center; justify-content: space-between; border: 1px solid #e6dbcc; text-decoration: none; cursor: pointer; color: inherit; transition: transform 0.1s; }
+        .card:active { transform: scale(0.98); }
         .card-left { display: flex; align-items: center; }
-        .icon { width: 40px; height: 40px; background: #e0f2fe; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 18px; }
-        .card-info h3 { margin: 0; font-size: 15px; color: #0f172a; }
-        .card-info span { font-size: 11px; color: #64748b; font-weight: bold; letter-spacing: 0.5px; }
-        .arrow { color: #94a3b8; font-size: 18px; }
+        .icon { width: 45px; height: 45px; background: #fff8e8; border: 1px solid #f3e5c8; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px; flex-shrink: 0; }
+        .card-info h3 { margin: 0; font-size: 15px; color: #2c241d; font-weight: 700; }
+        .card-info p { margin: 3px 0 0 0; font-size: 11px; color: #8c7b6c; }
+        .arrow { color: #b5a491; font-size: 18px; font-weight: bold; }
         
+        .nav-back { font-size: 14px; color: #8B6508; font-weight: bold; margin-bottom: 15px; cursor: pointer; display: inline-block; background: white; padding: 8px 15px; border-radius: 10px; border: 1px solid #e6dbcc; }
         .section-page { display: none; }
-        .footer-note { text-align: center; margin-top: 30px; font-size: 13px; color: #475569; font-weight: 500; }
+        .footer-note { text-align: center; margin-top: 35px; font-size: 13px; color: #8c7b6c; font-weight: 600; }
     </style>
 </head>
 <body>
 
-    <div class="header">FINAL • HELP • BY NK 💙</div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="menu-btn">≡</div>
+        <div class="site-title-top">NK STUDY HUB</div>
+        <div class="notif-btn">🔔</div>
+    </div>
 
     <div class="container">
-        <div class="title-box">
-            <h1>NK Study Hub</h1>
-            <p>Target SSC GD & Exams</p>
-        </div>
-
+        
         <!-- HOME PAGE -->
         <div id="home-page">
-            <div class="nav-home">Home</div>
+            <!-- Hero Banner -->
+            <div class="hero-card">
+                <div class="hero-logo">👑</div>
+                <div class="hero-info">
+                    <h2>NK Study Hub</h2>
+                    <p>Target SSC GD & All Exams 🚀</p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-box">
+                    <h3>5+</h3>
+                    <span>MAIN FOLDERS</span>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <span>FREE MATERIAL</span>
+                </div>
+            </div>
 
             <div class="search-box">
                 <span>🔍</span>
-                <input type="text" placeholder="Search courses..." readonly>
+                <input type="text" placeholder="Search courses (Math, Selection Way, etc.)..." readonly>
             </div>
 
-            <div class="alert-box">
-                <span>ℹ️ Click folders to explore or courses to view content</span>
-                <span style="cursor: pointer; font-weight: bold;">✕</span>
-            </div>
+            <div class="section-heading">All Batches & Folders</div>
 
             <!-- Selection Way Folder -->
-            <div class="card" onclick="openSection('sw-page', 'Selection Way')">
+            <div class="card" onclick="openSection('sw-page')">
                 <div class="card-left">
                     <div class="icon">📁</div>
                     <div class="card-info">
                         <h3>Selection Way</h3>
-                        <span>FOLDER</span>
+                        <p>Live & Recorded Batches</p>
                     </div>
                 </div>
                 <div class="arrow">›</div>
@@ -69,31 +105,31 @@
                     <div class="icon">📋</div>
                     <div class="card-info">
                         <h3>RWA</h3>
-                        <span>COURSE</span>
+                        <p>Rozgar With Ankit Classes</p>
                     </div>
                 </div>
                 <div class="arrow">›</div>
             </a>
 
             <!-- Parmar Academy Folder -->
-            <div class="card" onclick="openSection('parmar-page', 'Parmar Academy')">
+            <div class="card" onclick="openSection('parmar-page')">
                 <div class="card-left">
                     <div class="icon">📁</div>
                     <div class="card-info">
                         <h3>Parmar Academy</h3>
-                        <span>FOLDER</span>
+                        <p>GK & Special Batches</p>
                     </div>
                 </div>
                 <div class="arrow">›</div>
             </div>
 
             <!-- PW Folder -->
-            <div class="card" onclick="openSection('pw-page', 'Physics Wallah')">
+            <div class="card" onclick="openSection('pw-page')">
                 <div class="card-left">
                     <div class="icon">📁</div>
                     <div class="card-info">
                         <h3>PW (Physics Wallah)</h3>
-                        <span>FOLDER</span>
+                        <p>Server Links & Batches</p>
                     </div>
                 </div>
                 <div class="arrow">›</div>
@@ -102,22 +138,22 @@
             <!-- Science Magnet -->
             <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="card">
                 <div class="card-left">
-                    <div class="icon">📋</div>
+                    <div class="icon">⚡</div>
                     <div class="card-info">
                         <h3>Science Magnet</h3>
-                        <span>COURSE</span>
+                        <p>Science Special Classes</p>
                     </div>
                 </div>
                 <div class="arrow">›</div>
             </a>
 
             <!-- Mathematics Folder -->
-            <div class="card" onclick="openSection('math-page', 'Maths')">
+            <div class="card" onclick="openSection('math-page')">
                 <div class="card-left">
                     <div class="icon">📁</div>
                     <div class="card-info">
                         <h3>Mathematics</h3>
-                        <span>FOLDER</span>
+                        <p>Arithmetic, Advanced & Tricks</p>
                     </div>
                 </div>
                 <div class="arrow">›</div>
@@ -126,107 +162,107 @@
 
         <!-- SELECTION WAY SUB-PAGE -->
         <div id="sw-page" class="section-page">
-            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">Selection Way</span>
-            <div style="height: 10px;"></div>
+            <div class="nav-back" onclick="goHome()">← Back to Home</div>
+            <div class="section-heading">Selection Way Batches</div>
             
             <a href="https://selectionwayvivid.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Selection Way (Server 1)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (Server 1)</h3><p>Direct Stream Link</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://sw-studybison.space-z.ai/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Selection Way (Server 2)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (Server 2)</h3><p>StudyBison Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://sw.codewithvivek.xyz/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Selection Way (CodeWithVivek)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (CodeWithVivek)</h3><p>Alternative Link</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://nexthope.pages.dev/sw/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Selection Way (NextHope)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (NextHope)</h3><p>NextHope Server</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://testrankingfree.vercel.app" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Test Ranking Free</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">🏆</div><div class="card-info"><h3>Test Ranking Free</h3><p>Mock Test Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
 
         <!-- PARMAR ACADEMY SUB-PAGE -->
         <div id="parmar-page" class="section-page">
-            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">Parmar Academy</span>
-            <div style="height: 10px;"></div>
+            <div class="nav-back" onclick="goHome()">← Back to Home</div>
+            <div class="section-heading">Parmar Academy Batches</div>
 
             <a href="https://exuberant-salmon-nfdtg31d.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Parmar Academy (Server 1)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">🏛️</div><div class="card-info"><h3>Parmar Academy (Server 1)</h3><p>EdgeOne Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://pwnexus.eu.cc/pramar-academy" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Parmar Academy (PW Nexus)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">🏛️</div><div class="card-info"><h3>Parmar Academy (PW Nexus)</h3><p>Nexus Server</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
 
         <!-- PW SUB-PAGE -->
         <div id="pw-page" class="section-page">
-            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">PW (Physics Wallah)</span>
-            <div style="height: 10px;"></div>
+            <div class="nav-back" onclick="goHome()">← Back to Home</div>
+            <div class="section-heading">PW (Physics Wallah) Batches</div>
 
             <a href="https://pw-t1.space-z.ai/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>PW (Server 1)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">🎯</div><div class="card-info"><h3>PW (Server 1)</h3><p>Space-Z Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://www.learnxpw.site/study/batches" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>PW Batches (LearnX)</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">🎯</div><div class="card-info"><h3>PW Batches (LearnX)</h3><p>LearnX Study Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://stream.aryavidya.cc/#/batches" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>PW Stream Batches</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">🎯</div><div class="card-info"><h3>PW Stream Batches</h3><p>AryaVidya Server</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
 
         <!-- MATHEMATICS SUB-PAGE -->
         <div id="math-page" class="section-page">
-            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">Maths</span>
-            <div style="height: 10px;"></div>
+            <div class="nav-back" onclick="goHome()">← Back to Home</div>
+            <div class="section-heading">Mathematics Classes</div>
 
             <a href="https://shivering-beige-nufdeci7.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Bhuteshwar Sir</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Bhuteshwar Sir</h3><p>Maths Special Classes</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://stiff-turquoise-szlc17jn.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Aditya Ranjan Sir</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Aditya Ranjan Sir</h3><p>Complete Arithmetic & Advanced</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://compatible-peach-nxcc4lra.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Rakesh Sir</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Rakesh Sir</h3><p>Maths Foundation & Practice</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://straight-olive-0gfzpouc.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Abhinay Sir</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Abhinay Sir</h3><p>Advanced Maths Concepts</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://electric-black-ssbibzw7.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Maths Mania</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Maths Mania</h3><p>Short Tricks & Practice</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://wonderful-gold-9eg5wvn9.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Spartan Foundation</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Spartan Foundation</h3><p>Foundation Batch</p></div></div>
                 <div class="arrow">›</div>
             </a>
             <a href="https://unchanged-olive-tsad0som.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Super 100</h3><span>COURSE</span></div></div>
+                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Super 100</h3><p>Super 100 Batch</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
 
         <div class="footer-note">
-            📚 Explore Educational Resources
+            📚 NK STUDY HUB • Crafted for Success 💙
         </div>
     </div>
 
     <script>
-        function openSection(pageId, title) {
+        function openSection(pageId) {
             document.getElementById('home-page').style.display = 'none';
             document.querySelectorAll('.section-page').forEach(p => p.style.display = 'none');
             document.getElementById(pageId).style.display = 'block';
