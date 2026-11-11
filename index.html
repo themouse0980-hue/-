@@ -134,17 +134,42 @@
             <div class="arrow">›</div>
         </a>
 
-        <!-- Parmar Academy -->
-        <a href="#" class="card">
+        <!-- Parmar Academy Folder -->
+        <div class="card" onclick="toggleFolder('parmar-folder', 'parmar-arrow')">
             <div class="card-left">
-                <div class="icon">📋</div>
+                <div class="icon">📁</div>
                 <div class="card-info">
                     <h3>Parmar Academy</h3>
-                    <span>COURSE</span>
+                    <span>FOLDER</span>
                 </div>
             </div>
-            <div class="arrow">›</div>
-        </a>
+            <div class="arrow" id="parmar-arrow">›</div>
+        </div>
+
+        <!-- Inside Parmar Academy Links -->
+        <div class="sub-links" id="parmar-folder">
+            <a href="https://exuberant-salmon-nfdtg31d.edgeone.dev/" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Parmar Academy (Server 1)</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href="https://pwnexus.eu.cc/pramar-academy" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Parmar Academy (PW Nexus)</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+        </div>
 
         <!-- PW Folder -->
         <div class="card" onclick="toggleFolder('pw-folder', 'pw-arrow')">
