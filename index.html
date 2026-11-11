@@ -5,73 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NK STUDY HUB</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: #f7f3ee; color: #3d352d; overflow-x: hidden; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: #0d0d0d; color: #ffffff; overflow-x: hidden; }
         
         /* Top Navigation Bar */
-        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #f7f3ee; }
-        .menu-btn, .notif-btn { background: white; border: 1px solid #e6dbcc; width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); cursor: pointer; }
-        .site-title-top { font-weight: 700; font-size: 15px; letter-spacing: 0.5px; color: #2c241d; text-transform: uppercase; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #0d0d0d; border-bottom: 1px solid #1a1a1a; }
+        .menu-btn, .notif-btn { background: #1a1a1a; border: 1px solid #332815; width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #ffca36; cursor: pointer; }
+        .site-title-top { font-weight: 700; font-size: 15px; letter-spacing: 0.5px; color: #ffffff; text-transform: uppercase; }
 
-        .container { max-width: 600px; margin: 0 auto; padding: 0 15px 30px 15px; }
+        .container { max-width: 600px; margin: 0 auto; padding: 15px 15px 30px 15px; }
 
         /* Side Drawer Menu */
-        .drawer { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #f7f3ee; border-right: 1px solid #e6dbcc; box-shadow: 5px 0 15px rgba(0,0,0,0.05); transition: left 0.3s ease; z-index: 1000; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; box-sizing: border-box; }
+        .drawer { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #141414; border-right: 1px solid #2a2a2a; box-shadow: 5px 0 15px rgba(0,0,0,0.5); transition: left 0.3s ease; z-index: 1000; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; box-sizing: border-box; }
         .drawer.open { left: 0; }
-        .drawer-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #e6dbcc; padding-bottom: 15px; }
+        .drawer-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #2a2a2a; padding-bottom: 15px; }
         .drawer-logo { display: flex; align-items: center; }
-        .drawer-logo-icon { width: 40px; height: 40px; background: #fff8e8; border: 1px solid #f3e5c8; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-right: 10px; }
-        .drawer-logo-text h3 { margin: 0; font-size: 15px; color: #8B6508; font-style: italic; font-weight: 800; }
-        .drawer-logo-text p { margin: 2px 0 0 0; font-size: 10px; color: #8c7b6c; font-weight: 600; }
-        .close-btn { font-size: 22px; cursor: pointer; color: #8c7b6c; font-weight: bold; }
+        .drawer-logo-icon { width: 40px; height: 40px; background: #1a1508; border: 1px solid #ffca36; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-right: 10px; }
+        .drawer-logo-text h3 { margin: 0; font-size: 15px; color: #ffca36; font-style: italic; font-weight: 800; }
+        .drawer-logo-text p { margin: 2px 0 0 0; font-size: 10px; color: #a0a0a0; font-weight: 600; }
+        .close-btn { font-size: 22px; cursor: pointer; color: #a0a0a0; font-weight: bold; }
 
-        .drawer-section-title { font-size: 11px; text-transform: uppercase; color: #8c7b6c; font-weight: 700; letter-spacing: 1px; margin: 15px 0 10px 0; }
-        .drawer-item { display: flex; align-items: center; padding: 12px 15px; background: white; border: 1px solid #e6dbcc; border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #2c241d; font-size: 13px; font-weight: 600; justify-content: space-between; }
+        .drawer-section-title { font-size: 11px; text-transform: uppercase; color: #888888; font-weight: 700; letter-spacing: 1px; margin: 15px 0 10px 0; }
+        .drawer-item { display: flex; align-items: center; padding: 12px 15px; background: #1e1e1e; border: 1px solid #2a2a2a; border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #ffffff; font-size: 13px; font-weight: 600; justify-content: space-between; }
         .drawer-item-left { display: flex; align-items: center; }
         .drawer-item-left span { margin-right: 12px; font-size: 16px; }
-        .external-icon { font-size: 12px; color: #b5a491; }
+        .external-icon { font-size: 12px; color: #ffca36; }
 
-        .drawer-footer { text-align: center; font-size: 11px; color: #8c7b6c; font-weight: 600; border-top: 1px solid #e6dbcc; padding-top: 15px; }
-
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: none; z-index: 999; }
+        .drawer-footer { text-align: center; font-size: 11px; color: #888888; font-weight: 600; border-top: 1px solid #2a2a2a; padding-top: 15px; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; z-index: 999; }
         .overlay.show { display: block; }
 
-        /* Hero Banner Card */
-        .hero-card { background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%); border: 1px solid #e6dbcc; border-radius: 20px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(184, 134, 11, 0.05); display: flex; align-items: center; }
-        .hero-logo { width: 65px; height: 65px; background: #fff8e8; border: 1px solid #f3e5c8; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; margin-right: 15px; flex-shrink: 0; }
-        .hero-info h2 { margin: 0; font-size: 18px; color: #8B6508; font-style: italic; font-weight: 800; }
-        .hero-info p { margin: 4px 0 0 0; font-size: 12px; color: #8c7b6c; font-weight: 500; font-style: italic; }
+        /* Hero / Logo Card */
+        .hero-section { text-align: center; margin: 15px 0 25px 0; }
+        .main-logo { width: 75px; height: 75px; background: #141414; border: 2px solid #ffca36; border-radius: 22px; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; font-size: 36px; box-shadow: 0 0 20px rgba(255, 202, 54, 0.2); }
+        .main-title { font-size: 24px; font-weight: 800; color: #ffffff; margin: 0; }
+        .main-title span { color: #ffca36; }
+        .sub-title { font-size: 11px; color: #888888; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
 
-        /* Stats Row */
-        .stats-row { display: flex; gap: 12px; margin-bottom: 20px; }
-        .stat-box { flex: 1; background: white; border: 1px solid #e6dbcc; border-radius: 16px; padding: 15px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
-        .stat-box h3 { margin: 0; font-size: 18px; color: #8B6508; font-weight: 800; }
-        .stat-box span { font-size: 10px; color: #8c7b6c; font-weight: 700; letter-spacing: 0.5px; }
+        /* Top Action Button */
+        .tg-banner { background: #141414; border: 1px solid #2e2612; border-radius: 16px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: white; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .tg-banner-left { display: flex; align-items: center; }
+        .tg-icon { width: 40px; height: 40px; background: #1a1508; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 20px; border: 1px solid #3d3112; }
+        .tg-text h4 { margin: 0; font-size: 14px; font-weight: 700; color: #ffffff; }
+        .tg-text p { margin: 2px 0 0 0; font-size: 11px; color: #22c55e; font-weight: 600; }
+        .tg-arrow { width: 30px; height: 30px; background: #1e1e1e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #888888; }
 
         /* Search Box */
-        .search-box { background: white; border: 1px solid #e6dbcc; border-radius: 25px; padding: 12px 20px; display: flex; align-items: center; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .search-box input { border: none; outline: none; width: 100%; font-size: 14px; background: transparent; margin-left: 10px; color: #3d352d; }
+        .search-box { background: #141414; border: 1px solid #262626; border-radius: 16px; padding: 12px 18px; display: flex; align-items: center; margin-bottom: 25px; }
+        .search-box input { border: none; outline: none; width: 100%; font-size: 14px; background: transparent; margin-left: 10px; color: #ffffff; }
 
-        .section-heading { font-size: 18px; font-weight: 800; color: #2c241d; margin: 20px 0 12px 5px; }
-
-        /* Cards Style */
-        .card { background: white; border-radius: 16px; padding: 15px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; align-items: center; justify-content: space-between; border: 1px solid #e6dbcc; text-decoration: none; cursor: pointer; color: inherit; transition: transform 0.1s; }
-        .card:active { transform: scale(0.98); }
-        .card-left { display: flex; align-items: center; }
-        .icon { width: 45px; height: 45px; background: #fff8e8; border: 1px solid #f3e5c8; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px; flex-shrink: 0; }
-        .card-info h3 { margin: 0; font-size: 15px; color: #2c241d; font-weight: 700; }
-        .card-info p { margin: 3px 0 0 0; font-size: 11px; color: #8c7b6c; }
-        .arrow { color: #b5a491; font-size: 18px; font-weight: bold; }
+        /* 2-COLUMN GRID SYSTEM */
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .grid-card { background: #141414; border: 1px solid #282828; border-radius: 18px; padding: 20px 10px; text-align: center; text-decoration: none; color: inherit; cursor: pointer; transition: all 0.2s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .grid-card:hover, .grid-card:active { border-color: #ffca36; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255, 202, 54, 0.15); }
         
-        .nav-back { font-size: 14px; color: #8B6508; font-weight: bold; margin-bottom: 15px; cursor: pointer; display: inline-block; background: white; padding: 8px 15px; border-radius: 10px; border: 1px solid #e6dbcc; }
+        .grid-icon-box { width: 60px; height: 60px; background: #0d0d0d; border: 1px solid #332815; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 12px; }
+        .grid-title { font-size: 14px; font-weight: 700; color: #ffffff; margin: 0; }
+
+        /* List Cards (For Inner Pages) */
+        .list-card { background: #141414; border-radius: 16px; padding: 15px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #262626; text-decoration: none; cursor: pointer; color: inherit; }
+        .list-card-left { display: flex; align-items: center; }
+        .list-icon { width: 45px; height: 45px; background: #1a1508; border: 1px solid #332815; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px; flex-shrink: 0; }
+        .list-info h3 { margin: 0; font-size: 15px; color: #ffffff; font-weight: 700; }
+        .list-info p { margin: 3px 0 0 0; font-size: 11px; color: #888888; }
+        .arrow { color: #ffca36; font-size: 18px; font-weight: bold; }
+        
+        .nav-back { font-size: 13px; color: #ffca36; font-weight: bold; margin-bottom: 20px; cursor: pointer; display: inline-block; background: #141414; padding: 8px 16px; border-radius: 10px; border: 1px solid #332815; }
         .section-page { display: none; }
-        .footer-note { text-align: center; margin-top: 35px; font-size: 13px; color: #8c7b6c; font-weight: 600; }
+        .section-heading { font-size: 18px; font-weight: 800; color: #ffffff; margin: 10px 0 15px 0; }
+        .footer-note { text-align: center; margin-top: 40px; font-size: 12px; color: #666666; font-weight: 600; }
     </style>
 </head>
 <body>
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="menu-btn" onclick="toggleDrawer()">≡</div>
+        <div class="menu-btn" onclick="toggleDrawer()">⋮</div>
         <div class="site-title-top">NK STUDY HUB</div>
         <div class="notif-btn">🔔</div>
     </div>
@@ -95,16 +103,16 @@
 
             <div class="drawer-section-title">Navigation</div>
             <a href="#" class="drawer-item" onclick="toggleDrawer(); goHome();">
-                <div class="drawer-item-left"><span>🏠</span> All Batches</div>
+                <div class="drawer-item-left"><span>🏠</span> All Platforms</div>
             </a>
 
             <div class="drawer-section-title">Join Our Socials</div>
-            <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="drawer-item">
-                <div class="drawer-item-left"><span>💬</span> WhatsApp Channel</div>
-                <div class="external-icon">↗</div>
-            </a>
             <a href="https://t.me/+ci3EnMDrgswxMjc1" target="_blank" class="drawer-item">
                 <div class="drawer-item-left"><span>✈️</span> Telegram Group</div>
+                <div class="external-icon">↗</div>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="drawer-item">
+                <div class="drawer-item-left"><span>💬</span> WhatsApp Channel</div>
                 <div class="external-icon">↗</div>
             </a>
         </div>
@@ -118,104 +126,71 @@
         
         <!-- HOME PAGE -->
         <div id="home-page">
-            <!-- Hero Banner -->
-            <div class="hero-card">
-                <div class="hero-logo">👑</div>
-                <div class="hero-info">
-                    <h2>NK Study Hub</h2>
-                    <p>Target SSC GD & All Exams 🚀</p>
-                </div>
+            
+            <!-- Hero Header -->
+            <div class="hero-section">
+                <div class="main-logo">👑</div>
+                <h1 class="main-title">Welcome to <span>NK Hub</span></h1>
+                <div class="sub-title">EDUCATION MUST BE FREE FOR EVERYONE</div>
             </div>
 
-            <!-- Stats -->
-            <div class="stats-row">
-                <div class="stat-box">
-                    <h3>5+</h3>
-                    <span>MAIN FOLDERS</span>
+            <!-- Telegram Button -->
+            <a href="https://t.me/+ci3EnMDrgswxMjc1" target="_blank" class="tg-banner">
+                <div class="tg-banner-left">
+                    <div class="tg-icon">✈️</div>
+                    <div class="tg-text">
+                        <h4>Join Our Telegram</h4>
+                        <p>● ACTIVE JOINED</p>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h3>100%</h3>
-                    <span>FREE MATERIAL</span>
-                </div>
-            </div>
+                <div class="tg-arrow">➔</div>
+            </a>
 
+            <!-- Search Bar -->
             <div class="search-box">
-                <span>🔍</span>
-                <input type="text" placeholder="Search courses (Math, Selection Way, etc.)..." readonly>
+                <span style="color: #666;">🔍</span>
+                <input type="text" placeholder="Search platforms..." readonly>
             </div>
 
-            <div class="section-heading">All Batches & Folders</div>
-
-            <!-- Selection Way Folder -->
-            <div class="card" onclick="openSection('sw-page')">
-                <div class="card-left">
-                    <div class="icon">📁</div>
-                    <div class="card-info">
-                        <h3>Selection Way</h3>
-                        <p>Live & Recorded Batches</p>
-                    </div>
+            <!-- 2-Column Grid Layout -->
+            <div class="grid-container">
+                
+                <!-- Selection Way -->
+                <div class="grid-card" onclick="openSection('sw-page')">
+                    <div class="grid-icon-box">🎓</div>
+                    <h3 class="grid-title">Selection Way</h3>
                 </div>
-                <div class="arrow">›</div>
-            </div>
 
-            <!-- RWA -->
-            <a href="#" class="card">
-                <div class="card-left">
-                    <div class="icon">📋</div>
-                    <div class="card-info">
-                        <h3>RWA</h3>
-                        <p>Rozgar With Ankit Classes</p>
-                    </div>
-                </div>
-                <div class="arrow">›</div>
-            </a>
+                <!-- RWA -->
+                <a href="#" class="grid-card">
+                    <div class="grid-icon-box">📚</div>
+                    <h3 class="grid-title">RWA</h3>
+                </a>
 
-            <!-- Parmar Academy Folder -->
-            <div class="card" onclick="openSection('parmar-page')">
-                <div class="card-left">
-                    <div class="icon">📁</div>
-                    <div class="card-info">
-                        <h3>Parmar Academy</h3>
-                        <p>GK & Special Batches</p>
-                    </div>
+                <!-- Parmar Academy -->
+                <div class="grid-card" onclick="openSection('parmar-page')">
+                    <div class="grid-icon-box">🏛️</div>
+                    <h3 class="grid-title">Parmar Academy</h3>
                 </div>
-                <div class="arrow">›</div>
-            </div>
 
-            <!-- PW Folder -->
-            <div class="card" onclick="openSection('pw-page')">
-                <div class="card-left">
-                    <div class="icon">📁</div>
-                    <div class="card-info">
-                        <h3>PW (Physics Wallah)</h3>
-                        <p>Server Links & Batches</p>
-                    </div>
+                <!-- Physics Wallah -->
+                <div class="grid-card" onclick="openSection('pw-page')">
+                    <div class="grid-icon-box">⚡</div>
+                    <h3 class="grid-title">PW</h3>
                 </div>
-                <div class="arrow">›</div>
-            </div>
 
-            <!-- Science Magnet -->
-            <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left">
-                    <div class="icon">⚡</div>
-                    <div class="card-info">
-                        <h3>Science Magnet</h3>
-                        <p>Science Special Classes</p>
-                    </div>
-                </div>
-                <div class="arrow">›</div>
-            </a>
+                <!-- Science Magnet -->
+                <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="grid-card">
+                    <div class="grid-icon-box">🧲</div>
+                    <h3 class="grid-title">Science Magnet</h3>
+                </a>
 
-            <!-- Mathematics Folder -->
-            <div class="card" onclick="openSection('math-page')">
-                <div class="card-left">
-                    <div class="icon">📁</div>
-                    <div class="card-info">
-                        <h3>Mathematics</h3>
-                        <p>Arithmetic, Advanced & Tricks</p>
-                    </div>
+                <!-- Mathematics -->
+                <div class="grid-card" onclick="openSection('math-page')">
+                    <div class="grid-icon-box">📐</div>
+                    <h3 class="grid-title">Mathematics</h3>
                 </div>
-                <div class="arrow">›</div>
+
             </div>
         </div>
 
@@ -224,24 +199,24 @@
             <div class="nav-back" onclick="goHome()">← Back to Home</div>
             <div class="section-heading">Selection Way Batches</div>
             
-            <a href="https://selectionwayvivid.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (Server 1)</h3><p>Direct Stream Link</p></div></div>
+            <a href="https://selectionwayvivid.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📚</div><div class="list-info"><h3>Selection Way (Server 1)</h3><p>Direct Stream Link</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://sw-studybison.space-z.ai/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (Server 2)</h3><p>StudyBison Portal</p></div></div>
+            <a href="https://sw-studybison.space-z.ai/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📚</div><div class="list-info"><h3>Selection Way (Server 2)</h3><p>StudyBison Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://sw.codewithvivek.xyz/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (CodeWithVivek)</h3><p>Alternative Link</p></div></div>
+            <a href="https://sw.codewithvivek.xyz/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📚</div><div class="list-info"><h3>Selection Way (CodeWithVivek)</h3><p>Alternative Link</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://nexthope.pages.dev/sw/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📚</div><div class="card-info"><h3>Selection Way (NextHope)</h3><p>NextHope Server</p></div></div>
+            <a href="https://nexthope.pages.dev/sw/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📚</div><div class="list-info"><h3>Selection Way (NextHope)</h3><p>NextHope Server</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://testrankingfree.vercel.app" target="_blank" class="card">
-                <div class="card-left"><div class="icon">🏆</div><div class="card-info"><h3>Test Ranking Free</h3><p>Mock Test Portal</p></div></div>
+            <a href="https://testrankingfree.vercel.app" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">🏆</div><div class="list-info"><h3>Test Ranking Free</h3><p>Mock Test Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
@@ -251,12 +226,12 @@
             <div class="nav-back" onclick="goHome()">← Back to Home</div>
             <div class="section-heading">Parmar Academy Batches</div>
 
-            <a href="https://exuberant-salmon-nfdtg31d.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">🏛️</div><div class="card-info"><h3>Parmar Academy (Server 1)</h3><p>EdgeOne Portal</p></div></div>
+            <a href="https://exuberant-salmon-nfdtg31d.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">🏛️</div><div class="list-info"><h3>Parmar Academy (Server 1)</h3><p>EdgeOne Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://pwnexus.eu.cc/pramar-academy" target="_blank" class="card">
-                <div class="card-left"><div class="icon">🏛️</div><div class="card-info"><h3>Parmar Academy (PW Nexus)</h3><p>Nexus Server</p></div></div>
+            <a href="https://pwnexus.eu.cc/pramar-academy" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">🏛️</div><div class="list-info"><h3>Parmar Academy (PW Nexus)</h3><p>Nexus Server</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
@@ -266,16 +241,16 @@
             <div class="nav-back" onclick="goHome()">← Back to Home</div>
             <div class="section-heading">PW (Physics Wallah) Batches</div>
 
-            <a href="https://pw-t1.space-z.ai/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">🎯</div><div class="card-info"><h3>PW (Server 1)</h3><p>Space-Z Portal</p></div></div>
+            <a href="https://pw-t1.space-z.ai/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">🎯</div><div class="list-info"><h3>PW (Server 1)</h3><p>Space-Z Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://www.learnxpw.site/study/batches" target="_blank" class="card">
-                <div class="card-left"><div class="icon">🎯</div><div class="card-info"><h3>PW Batches (LearnX)</h3><p>LearnX Study Portal</p></div></div>
+            <a href="https://www.learnxpw.site/study/batches" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">🎯</div><div class="list-info"><h3>PW Batches (LearnX)</h3><p>LearnX Study Portal</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://stream.aryavidya.cc/#/batches" target="_blank" class="card">
-                <div class="card-left"><div class="icon">🎯</div><div class="card-info"><h3>PW Stream Batches</h3><p>AryaVidya Server</p></div></div>
+            <a href="https://stream.aryavidya.cc/#/batches" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">🎯</div><div class="list-info"><h3>PW Stream Batches</h3><p>AryaVidya Server</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
@@ -285,38 +260,38 @@
             <div class="nav-back" onclick="goHome()">← Back to Home</div>
             <div class="section-heading">Mathematics Classes</div>
 
-            <a href="https://shivering-beige-nufdeci7.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Bhuteshwar Sir</h3><p>Maths Special Classes</p></div></div>
+            <a href="https://shivering-beige-nufdeci7.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📐</div><div class="list-info"><h3>Bhuteshwar Sir</h3><p>Maths Special Classes</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://stiff-turquoise-szlc17jn.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Aditya Ranjan Sir</h3><p>Complete Arithmetic & Advanced</p></div></div>
+            <a href="https://stiff-turquoise-szlc17jn.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📐</div><div class="list-info"><h3>Aditya Ranjan Sir</h3><p>Complete Arithmetic & Advanced</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://compatible-peach-nxcc4lra.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Rakesh Sir</h3><p>Maths Foundation & Practice</p></div></div>
+            <a href="https://compatible-peach-nxcc4lra.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📐</div><div class="list-info"><h3>Rakesh Sir</h3><p>Maths Foundation & Practice</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://straight-olive-0gfzpouc.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Abhinay Sir</h3><p>Advanced Maths Concepts</p></div></div>
+            <a href="https://straight-olive-0gfzpouc.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📐</div><div class="list-info"><h3>Abhinay Sir</h3><p>Advanced Maths Concepts</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://electric-black-ssbibzw7.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Maths Mania</h3><p>Short Tricks & Practice</p></div></div>
+            <a href="https://electric-black-ssbibzw7.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📐</div><div class="list-info"><h3>Maths Mania</h3><p>Short Tricks & Practice</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://wonderful-gold-9eg5wvn9.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Spartan Foundation</h3><p>Foundation Batch</p></div></div>
+            <a href="https://wonderful-gold-9eg5wvn9.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📐</div><div class="list-info"><h3>Spartan Foundation</h3><p>Foundation Batch</p></div></div>
                 <div class="arrow">›</div>
             </a>
-            <a href="https://unchanged-olive-tsad0som.edgeone.dev/" target="_blank" class="card">
-                <div class="card-left"><div class="icon">📐</div><div class="card-info"><h3>Super 100</h3><p>Super 100 Batch</p></div></div>
+            <a href="https://unchanged-olive-tsad0som.edgeone.dev/" target="_blank" class="list-card">
+                <div class="list-card-left"><div class="list-icon">📐</div><div class="list-info"><h3>Super 100</h3><p>Super 100 Batch</p></div></div>
                 <div class="arrow">›</div>
             </a>
         </div>
 
         <div class="footer-note">
-            📚 NK STUDY HUB • Crafted for Success 💙
+            NK STUDY HUB • 2026
         </div>
     </div>
 
