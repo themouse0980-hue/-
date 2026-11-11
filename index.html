@@ -23,7 +23,7 @@
         .card-info span { font-size: 11px; color: #64748b; font-weight: bold; letter-spacing: 0.5px; }
         .arrow { color: #94a3b8; font-size: 18px; transition: transform 0.2s; }
         
-        /* Dropdown style for PW folder */
+        /* Dropdown style for folders */
         .sub-links { display: none; margin-top: -6px; margin-bottom: 12px; padding-left: 15px; border-left: 2px solid #2563eb; }
         .sub-links .card { background: #f8fafc; margin-bottom: 8px; }
 
@@ -52,17 +52,75 @@
             <span style="cursor: pointer; font-weight: bold;">✕</span>
         </div>
 
-        <!-- Selection Way -->
-        <a href="#" class="card">
+        <!-- Selection Way Folder -->
+        <div class="card" onclick="toggleFolder('sw-folder', 'sw-arrow')">
             <div class="card-left">
-                <div class="icon">📋</div>
+                <div class="icon">📁</div>
                 <div class="card-info">
                     <h3>Selection Way</h3>
-                    <span>COURSE</span>
+                    <span>FOLDER</span>
                 </div>
             </div>
-            <div class="arrow">›</div>
-        </a>
+            <div class="arrow" id="sw-arrow">›</div>
+        </div>
+
+        <!-- Inside Selection Way Links -->
+        <div class="sub-links" id="sw-folder">
+            <a href="https://selectionwayvivid.edgeone.dev/" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Selection Way (Server 1)</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href="https://sw-studybison.space-z.ai/" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Selection Way (Server 2)</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href="https://sw.codewithvivek.xyz/" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Selection Way (CodeWithVivek)</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href="https://nexthope.pages.dev/sw/" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Selection Way (NextHope)</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href="https://testrankingfree.vercel.app" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Test Ranking Free</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+        </div>
 
         <!-- RWA -->
         <a href="#" class="card">
@@ -88,8 +146,8 @@
             <div class="arrow">›</div>
         </a>
 
-        <!-- PW Single Folder -->
-        <div class="card" onclick="togglePW()">
+        <!-- PW Folder -->
+        <div class="card" onclick="toggleFolder('pw-folder', 'pw-arrow')">
             <div class="card-left">
                 <div class="icon">📁</div>
                 <div class="card-info">
@@ -166,9 +224,9 @@
     </div>
 
     <script>
-        function togglePW() {
-            var folder = document.getElementById("pw-folder");
-            var arrow = document.getElementById("pw-arrow");
+        function toggleFolder(folderId, arrowId) {
+            var folder = document.getElementById(folderId);
+            var arrow = document.getElementById(arrowId);
             if (folder.style.display === "block") {
                 folder.style.display = "none";
                 arrow.style.transform = "rotate(0deg)";
