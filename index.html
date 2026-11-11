@@ -11,7 +11,7 @@
         .title-box { text-align: center; margin: 20px 0; }
         .title-box h1 { font-size: 24px; color: #1e3a8a; margin: 0; font-style: italic; }
         .title-box p { font-size: 14px; color: #64748b; margin: 5px 0 0 0; font-style: italic; }
-        .nav-home { font-size: 14px; color: #2563eb; font-weight: bold; margin-bottom: 15px; }
+        .nav-home { font-size: 14px; color: #2563eb; font-weight: bold; margin-bottom: 15px; cursor: pointer; display: inline-block; }
         .search-box { background: white; border: 1px solid #cbd5e1; border-radius: 25px; padding: 10px 15px; display: flex; align-items: center; margin-bottom: 15px; }
         .search-box input { border: none; outline: none; width: 100%; font-size: 14px; background: transparent; margin-left: 8px; }
         .alert-box { background: #fef3c7; border: 1px solid #fde68a; color: #92400e; padding: 10px 15px; border-radius: 8px; font-size: 13px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -21,12 +21,9 @@
         .icon { width: 40px; height: 40px; background: #e0f2fe; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 18px; }
         .card-info h3 { margin: 0; font-size: 15px; color: #0f172a; }
         .card-info span { font-size: 11px; color: #64748b; font-weight: bold; letter-spacing: 0.5px; }
-        .arrow { color: #94a3b8; font-size: 18px; transition: transform 0.2s; }
+        .arrow { color: #94a3b8; font-size: 18px; }
         
-        /* Dropdown style for folders */
-        .sub-links { display: none; margin-top: -6px; margin-bottom: 12px; padding-left: 15px; border-left: 2px solid #2563eb; }
-        .sub-links .card { background: #f8fafc; margin-bottom: 8px; }
-
+        .section-page { display: none; }
         .footer-note { text-align: center; margin-top: 30px; font-size: 13px; color: #475569; font-weight: 500; }
     </style>
 </head>
@@ -40,31 +37,98 @@
             <p>Target SSC GD & Exams</p>
         </div>
 
-        <div class="nav-home">Home</div>
+        <!-- HOME PAGE -->
+        <div id="home-page">
+            <div class="nav-home">Home</div>
 
-        <div class="search-box">
-            <span>🔍</span>
-            <input type="text" placeholder="Search courses..." readonly>
-        </div>
-
-        <div class="alert-box">
-            <span>ℹ️ Click folders to explore or courses to view content</span>
-            <span style="cursor: pointer; font-weight: bold;">✕</span>
-        </div>
-
-        <!-- Selection Way Folder -->
-        <div class="card" onclick="toggleFolder('sw-folder', 'sw-arrow')">
-            <div class="card-left">
-                <div class="icon">📁</div>
-                <div class="card-info">
-                    <h3>Selection Way</h3>
-                    <span>FOLDER</span>
-                </div>
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" placeholder="Search courses..." readonly>
             </div>
-            <div class="arrow" id="sw-arrow">›</div>
+
+            <div class="alert-box">
+                <span>ℹ️ Click folders to explore or courses to view content</span>
+                <span style="cursor: pointer; font-weight: bold;">✕</span>
+            </div>
+
+            <!-- Selection Way Folder -->
+            <div class="card" onclick="openSection('sw-page', 'Selection Way')">
+                <div class="card-left">
+                    <div class="icon">📁</div>
+                    <div class="card-info">
+                        <h3>Selection Way</h3>
+                        <span>FOLDER</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </div>
+
+            <!-- RWA -->
+            <a href="#" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>RWA</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <!-- Parmar Academy Folder -->
+            <div class="card" onclick="openSection('parmar-page', 'Parmar Academy')">
+                <div class="card-left">
+                    <div class="icon">📁</div>
+                    <div class="card-info">
+                        <h3>Parmar Academy</h3>
+                        <span>FOLDER</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </div>
+
+            <!-- PW Folder -->
+            <div class="card" onclick="openSection('pw-page', 'Physics Wallah')">
+                <div class="card-left">
+                    <div class="icon">📁</div>
+                    <div class="card-info">
+                        <h3>PW (Physics Wallah)</h3>
+                        <span>FOLDER</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </div>
+
+            <!-- Science Magnet -->
+            <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="card">
+                <div class="card-left">
+                    <div class="icon">📋</div>
+                    <div class="card-info">
+                        <h3>Science Magnet</h3>
+                        <span>COURSE</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <!-- Mathematics Folder -->
+            <div class="card" onclick="openSection('math-page', 'Maths')">
+                <div class="card-left">
+                    <div class="icon">📁</div>
+                    <div class="card-info">
+                        <h3>Mathematics</h3>
+                        <span>FOLDER</span>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </div>
         </div>
 
-        <div class="sub-links" id="sw-folder">
+        <!-- SELECTION WAY SUB-PAGE -->
+        <div id="sw-page" class="section-page">
+            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">Selection Way</span>
+            <div style="height: 10px;"></div>
+            
             <a href="https://selectionwayvivid.edgeone.dev/" target="_blank" class="card">
                 <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Selection Way (Server 1)</h3><span>COURSE</span></div></div>
                 <div class="arrow">›</div>
@@ -87,31 +151,11 @@
             </a>
         </div>
 
-        <!-- RWA -->
-        <a href="#" class="card">
-            <div class="card-left">
-                <div class="icon">📋</div>
-                <div class="card-info">
-                    <h3>RWA</h3>
-                    <span>COURSE</span>
-                </div>
-            </div>
-            <div class="arrow">›</div>
-        </a>
+        <!-- PARMAR ACADEMY SUB-PAGE -->
+        <div id="parmar-page" class="section-page">
+            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">Parmar Academy</span>
+            <div style="height: 10px;"></div>
 
-        <!-- Parmar Academy Folder -->
-        <div class="card" onclick="toggleFolder('parmar-folder', 'parmar-arrow')">
-            <div class="card-left">
-                <div class="icon">📁</div>
-                <div class="card-info">
-                    <h3>Parmar Academy</h3>
-                    <span>FOLDER</span>
-                </div>
-            </div>
-            <div class="arrow" id="parmar-arrow">›</div>
-        </div>
-
-        <div class="sub-links" id="parmar-folder">
             <a href="https://exuberant-salmon-nfdtg31d.edgeone.dev/" target="_blank" class="card">
                 <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Parmar Academy (Server 1)</h3><span>COURSE</span></div></div>
                 <div class="arrow">›</div>
@@ -122,19 +166,11 @@
             </a>
         </div>
 
-        <!-- PW Folder -->
-        <div class="card" onclick="toggleFolder('pw-folder', 'pw-arrow')">
-            <div class="card-left">
-                <div class="icon">📁</div>
-                <div class="card-info">
-                    <h3>PW (Physics Wallah)</h3>
-                    <span>FOLDER</span>
-                </div>
-            </div>
-            <div class="arrow" id="pw-arrow">›</div>
-        </div>
+        <!-- PW SUB-PAGE -->
+        <div id="pw-page" class="section-page">
+            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">PW (Physics Wallah)</span>
+            <div style="height: 10px;"></div>
 
-        <div class="sub-links" id="pw-folder">
             <a href="https://pw-t1.space-z.ai/" target="_blank" class="card">
                 <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>PW (Server 1)</h3><span>COURSE</span></div></div>
                 <div class="arrow">›</div>
@@ -149,31 +185,11 @@
             </a>
         </div>
 
-        <!-- Science Magnet -->
-        <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="card">
-            <div class="card-left">
-                <div class="icon">📋</div>
-                <div class="card-info">
-                    <h3>Science Magnet</h3>
-                    <span>COURSE</span>
-                </div>
-            </div>
-            <div class="arrow">›</div>
-        </a>
+        <!-- MATHEMATICS SUB-PAGE -->
+        <div id="math-page" class="section-page">
+            <div class="nav-home" onclick="goHome()">← Back</div> <span style="font-weight: bold; color: #1e3a8a; margin-left: 10px;">Maths</span>
+            <div style="height: 10px;"></div>
 
-        <!-- Mathematics Folder (With 6 sub-links) -->
-        <div class="card" onclick="toggleFolder('math-folder', 'math-arrow')">
-            <div class="card-left">
-                <div class="icon">📁</div>
-                <div class="card-info">
-                    <h3>Mathematics</h3>
-                    <span>FOLDER</span>
-                </div>
-            </div>
-            <div class="arrow" id="math-arrow">›</div>
-        </div>
-
-        <div class="sub-links" id="math-folder">
             <a href="https://shivering-beige-nufdeci7.edgeone.dev/" target="_blank" class="card">
                 <div class="card-left"><div class="icon">📋</div><div class="card-info"><h3>Bhuteshwar Sir</h3><span>COURSE</span></div></div>
                 <div class="arrow">›</div>
@@ -210,16 +226,17 @@
     </div>
 
     <script>
-        function toggleFolder(folderId, arrowId) {
-            var folder = document.getElementById(folderId);
-            var arrow = document.getElementById(arrowId);
-            if (folder.style.display === "block") {
-                folder.style.display = "none";
-                arrow.style.transform = "rotate(0deg)";
-            } else {
-                folder.style.display = "block";
-                arrow.style.transform = "rotate(90deg)";
-            }
+        function openSection(pageId, title) {
+            document.getElementById('home-page').style.display = 'none';
+            document.querySelectorAll('.section-page').forEach(p => p.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function goHome() {
+            document.querySelectorAll('.section-page').forEach(p => p.style.display = 'none');
+            document.getElementById('home-page').style.display = 'block';
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
