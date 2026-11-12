@@ -15,31 +15,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(11, 11, 12, 0.35), rgba(11, 11, 12, 0.35)), url('radhakrishna.jpg');
+            background: linear-gradient(rgba(11, 11, 12, 0.4), rgba(11, 11, 12, 0.4)), url('radhakrishna.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            opacity: 0.55; /* Photo ab bilkul saaf aur crystal clear dikhegi */
+            opacity: 0.65;
             pointer-events: none;
             z-index: -1;
         }
 
         /* Top App Bar */
         .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: rgba(11, 11, 12, 0.85); border-bottom: 1px solid rgba(255, 186, 8, 0.2); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
-        .menu-btn { background: rgba(22, 22, 24, 0.85); border: 1px solid #ffba08; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #ffba08; cursor: pointer; box-shadow: 0 0 10px rgba(255, 186, 8, 0.2); }
-        .site-title-top { font-weight: 700; font-size: 13px; letter-spacing: 0.5px; color: #ffffff; text-transform: uppercase; }
+        .menu-btn { background: rgba(22, 22, 24, 0.85); border: 1px solid #ffba08; width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #ffba08; cursor: pointer; box-shadow: 0 0 10px rgba(255, 186, 8, 0.2); }
+        .site-title-top { font-weight: 700; font-size: 14px; letter-spacing: 0.5px; color: #ffffff; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
 
         .container { max-width: 600px; margin: 0 auto; padding: 12px 16px 30px 16px; position: relative; z-index: 1; }
 
         /* Hero Header Section */
         .hero-section { text-align: center; margin: 15px 0 18px 0; }
-        .main-logo { width: 68px; height: 68px; background: rgba(18, 18, 20, 0.7); border: 2px solid #ffba08; border-radius: 20px; margin: 0 auto 10px auto; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 0 20px rgba(255, 186, 8, 0.25); backdrop-filter: blur(4px); }
-        .main-title { font-size: 20px; font-weight: 800; color: #ffffff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
+        .main-logo { width: 72px; height: 72px; background: rgba(18, 18, 20, 0.75); border: 2px solid #ffba08; border-radius: 50%; margin: 0 auto 10px auto; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 0 20px rgba(255, 186, 8, 0.3); backdrop-filter: blur(4px); overflow: hidden; }
+        .main-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .main-title { font-size: 22px; font-weight: 800; color: #ffffff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
         .main-title span { color: #ffba08; }
         .sub-title { font-size: 9px; color: #e2e2e2; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
 
-        /* Telegram & Chill Zone Banners */
-        .social-banner { background: rgba(18, 18, 20, 0.75); border: 1px solid rgba(255, 186, 8, 0.3); border-radius: 16px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: white; margin-bottom: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); backdrop-filter: blur(6px); }
+        /* Telegram & VIP Banners */
+        .social-banner { background: rgba(18, 18, 20, 0.8); border: 1px solid rgba(255, 186, 8, 0.3); border-radius: 16px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: white; margin-bottom: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); backdrop-filter: blur(6px); }
         .social-banner-left { display: flex; align-items: center; }
         .social-icon { width: 36px; height: 36px; background: rgba(28, 25, 10, 0.85); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 16px; border: 1px solid #ffba08; }
         .social-text h4 { margin: 0; font-size: 13px; font-weight: 700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
@@ -47,25 +48,25 @@
         .social-arrow { width: 26px; height: 26px; background: rgba(26, 26, 28, 0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #ffffff; border: 1px solid rgba(255,255,255,0.2); }
 
         /* Search Box */
-        .search-box { background: rgba(18, 18, 20, 0.75); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 12px 16px; display: flex; align-items: center; margin: 15px 0 15px 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5); backdrop-filter: blur(6px); }
+        .search-box { background: rgba(18, 18, 20, 0.8); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 12px 16px; display: flex; align-items: center; margin: 15px 0 18px 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5); backdrop-filter: blur(6px); }
         .search-box input { border: none; outline: none; width: 100%; font-size: 13px; background: transparent; margin-left: 10px; color: #ffffff; }
         .search-box input::placeholder { color: #cccccc; }
 
-        /* 2-COLUMN APP GRID SYSTEM (HOME) */
-        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .grid-card { background: rgba(18, 18, 20, 0.78); border: 1px solid rgba(255, 186, 8, 0.25); border-radius: 20px; padding: 20px 10px; text-align: center; text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.4); backdrop-filter: blur(6px); }
+        /* CIRCULAR PLATFORM GRID SYSTEM (HOME) */
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
+        .grid-card { background: rgba(18, 18, 20, 0.82); border: 1px solid rgba(255, 186, 8, 0.3); border-radius: 20px; padding: 16px 10px; text-align: center; text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(0,0,0,0.4); backdrop-filter: blur(6px); }
         .grid-card:active { border-color: #ffba08; transform: scale(0.97); }
         
-        .grid-icon-box { width: 56px; height: 56px; background: rgba(11, 11, 12, 0.85); border: 2px solid #ffba08; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; box-shadow: 0 0 10px rgba(255, 186, 8, 0.2); overflow: hidden; }
+        .grid-icon-box { width: 64px; height: 64px; background: rgba(11, 11, 12, 0.9); border: 2px solid #ffba08; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; box-shadow: 0 0 15px rgba(255, 186, 8, 0.3); overflow: hidden; }
         .grid-icon-box img { width: 100%; height: 100%; object-fit: cover; }
-        .grid-title { font-size: 13px; font-weight: 700; color: #ffffff; margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.9); }
+        .grid-title { font-size: 13px; font-weight: 700; color: #ffffff; margin: 0 0 2px 0; text-shadow: 0 1px 2px rgba(0,0,0,0.9); }
+        .grid-sub { font-size: 10px; color: #cccccc; margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.9); }
 
         /* SUB-PAGE CIRCULAR ICON DESIGN */
         .sub-page { display: none; padding-top: 8px; }
         .sub-header { margin-bottom: 24px; }
         .sub-header h2 { font-size: 22px; font-weight: 800; color: #ffffff; margin: 0 0 6px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
         .sub-header .sub-highlight { font-size: 14px; font-weight: 700; color: #ffba08; margin: 0 0 4px 0; text-shadow: 0 1px 2px rgba(0,0,0,0.9); }
-        .sub-header .sub-desc { font-size: 12px; color: #dddddd; margin: 0; }
 
         .circle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 14px; margin-bottom: 28px; }
         .circle-item { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: #ffffff; cursor: pointer; }
@@ -73,7 +74,7 @@
         
         .circle-ring { width: 76px; height: 76px; border-radius: 50%; border: 2px solid #ffba08; background: rgba(18, 18, 20, 0.85); display: flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 10px; box-shadow: 0 0 15px rgba(255, 186, 8, 0.25); transition: transform 0.15s ease; backdrop-filter: blur(6px); }
         .circle-title { font-size: 14px; font-weight: 700; color: #ffffff; margin: 0 0 3px 0; text-shadow: 0 1px 2px rgba(0,0,0,0.9); }
-        .circle-sub { font-size: 11px; color: #dddddd; margin: 0; }
+        .circle-sub { font-size: 11px; color: #cccccc; margin: 0; }
 
         .back-pill-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 186, 8, 0.2); border: 1px solid #ffba08; color: #ffba08; padding: 10px 18px; border-radius: 25px; font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.4); backdrop-filter: blur(4px); }
         .back-pill-btn:active { background: rgba(255, 186, 8, 0.35); }
@@ -87,7 +88,7 @@
     <div class="top-bar">
         <div class="menu-btn" id="topMenuBtn">⋮</div>
         <div class="site-title-top" id="topTitle">NK STUDY HUB</div>
-        <div style="width: 38px;"></div>
+        <div class="menu-btn" style="border-color: rgba(255,186,8,0.4);">🔔</div>
     </div>
 
     <div class="container">
@@ -104,22 +105,22 @@
             <!-- Telegram Banner -->
             <a href="https://t.me/+ci3EnMDrgswxMjc1" target="_blank" class="social-banner">
                 <div class="social-banner-left">
-                    <div class="social-icon">✈️</div>
+                    <div class="social-icon">📢</div>
                     <div class="social-text">
                         <h4>Join Our Telegram</h4>
-                        <p>● ACTIVE JOINED</p>
+                        <p>Free PDFs & Live Updates</p>
                     </div>
                 </div>
                 <div class="social-arrow">➔</div>
             </a>
 
-            <!-- Chill Zone Banner -->
+            <!-- VIP Channel Banner -->
             <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="social-banner">
                 <div class="social-banner-left">
-                    <div class="social-icon" style="border-color: #ef4444; color: #ef4444;">🎬</div>
+                    <div class="social-icon" style="border-color: #ef4444; color: #ef4444;">💬</div>
                     <div class="social-text">
-                        <h4>NKFLIX <span style="font-size: 9px; background: #ef4444; padding: 1px 5px; border-radius: 4px; color: white;">STREAM</span></h4>
-                        <p style="color: #ef4444;">● Chill Zone</p>
+                        <h4>NK HUB VIP <span style="font-size: 9px; background: #ef4444; padding: 1px 5px; border-radius: 4px; color: white;">UPDATES</span></h4>
+                        <p style="color: #ef4444;">Official WhatsApp Channel</p>
                     </div>
                 </div>
                 <div class="social-arrow">➔</div>
@@ -128,106 +129,122 @@
             <!-- Search Bar -->
             <div class="search-box">
                 <span style="color: #ddd; font-size: 14px;">🔍</span>
-                <input type="text" placeholder="Search platforms..." readonly>
+                <input type="text" placeholder="Search platforms or courses..." readonly>
             </div>
 
-            <!-- 2-Column App Grid -->
+            <!-- Circular Platform Grid -->
             <div class="grid-container">
                 
                 <!-- Selection Way -->
                 <div onclick="showSubPage('selectionWayView')" class="grid-card">
                     <div class="grid-icon-box"><img src="selection.png" alt="Selection Way"></div>
                     <h3 class="grid-title">Selection Way</h3>
+                    <p class="grid-sub">Live & Recorded</p>
                 </div>
 
                 <!-- RWA -->
                 <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="grid-card">
                     <div class="grid-icon-box"><img src="rwa.png" alt="RWA"></div>
-                    <h3 class="grid-title">RWA</h3>
+                    <h3 class="grid-title">RWA Batch</h3>
+                    <p class="grid-sub">रोजगार विद अंकित</p>
                 </a>
 
                 <!-- Parmar Academy -->
                 <div onclick="showSubPage('parmarView')" class="grid-card">
                     <div class="grid-icon-box"><img src="parmar.jpg" alt="Parmar Academy"></div>
-                    <h3 class="grid-title">Parmar Academy</h3>
+                    <h3 class="grid-title">Parmar SSC</h3>
+                    <p class="grid-sub">जीके & एसएससी</p>
                 </div>
 
                 <!-- PW -->
                 <div onclick="showSubPage('pwView')" class="grid-card">
                     <div class="grid-icon-box"><img src="pw.jpg" alt="PW"></div>
-                    <h3 class="grid-title">PW</h3>
+                    <h3 class="grid-title">PhysicsWallah</h3>
+                    <p class="grid-sub">PW Live Streams</p>
                 </div>
 
                 <!-- Science Magnet -->
                 <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="grid-card">
                     <div class="grid-icon-box"><img src="science.png" alt="Science Magnet"></div>
                     <h3 class="grid-title">Science Magnet</h3>
+                    <p class="grid-sub">Neeraj Sir Special</p>
                 </a>
 
                 <!-- Unacademy -->
                 <div onclick="showSubPage('unacademyView')" class="grid-card">
                     <div class="grid-icon-box"><img src="unacademy.png" alt="Unacademy"></div>
                     <h3 class="grid-title">Unacademy</h3>
+                    <p class="grid-sub">Top Educators</p>
                 </div>
 
                 <!-- Mathematics -->
                 <div onclick="showSubPage('mathsView')" class="grid-card">
                     <div class="grid-icon-box"><img src="mathmat.jpg" alt="Mathematics"></div>
                     <h3 class="grid-title">Mathematics</h3>
+                    <p class="grid-sub">Advance & Arithmetic</p>
                 </div>
 
                 <!-- Sachin Academy -->
                 <div onclick="showSubPage('sachinView')" class="grid-card">
                     <div class="grid-icon-box"><img src="sachin.jpg" alt="Sachin Academy"></div>
                     <h3 class="grid-title">Sachin Academy</h3>
+                    <p class="grid-sub">CTET & Teaching</p>
                 </div>
 
                 <!-- Careerwill -->
                 <div onclick="showSubPage('careerwillView')" class="grid-card">
                     <div class="grid-icon-box"><img src="cw.png" alt="Careerwill"></div>
                     <h3 class="grid-title">Careerwill</h3>
+                    <p class="grid-sub">Gagan Pratap Sir</p>
                 </div>
 
                 <!-- Study IQ -->
                 <div onclick="showSubPage('studyiqView')" class="grid-card">
                     <div class="grid-icon-box"><img src="studyiq.jpg" alt="Study IQ"></div>
                     <h3 class="grid-title">Study IQ</h3>
+                    <p class="grid-sub">UPSC & IAS Batches</p>
                 </div>
 
                 <!-- Vidyagram -->
                 <div onclick="showSubPage('vidyagramView')" class="grid-card">
                     <div class="grid-icon-box"><img src="vidyagram.jpg" alt="Vidyagram"></div>
                     <h3 class="grid-title">Vidyagram</h3>
+                    <p class="grid-sub">Special Classes</p>
                 </div>
 
                 <!-- KGS -->
                 <div onclick="showSubPage('kgsView')" class="grid-card">
                     <div class="grid-icon-box"><img src="kgs.png" alt="KGS"></div>
-                    <h3 class="grid-title">KGS</h3>
+                    <h3 class="grid-title">Khan Global Studies</h3>
+                    <p class="grid-sub">KGS Official</p>
                 </div>
 
                 <!-- Next Toppers -->
                 <div onclick="showSubPage('nexttoppersView')" class="grid-card">
                     <div class="grid-icon-box"><img src="nexttoppers.png" alt="Next Toppers"></div>
                     <h3 class="grid-title">Next Toppers</h3>
+                    <p class="grid-sub">Engineers & AE/JE</p>
                 </div>
 
                 <!-- Mission Jeet -->
                 <div onclick="showSubPage('missionjeetView')" class="grid-card">
                     <div class="grid-icon-box"><img src="missionjeet.png" alt="Mission Jeet"></div>
                     <h3 class="grid-title">Mission Jeet</h3>
+                    <p class="grid-sub">Defence & Exams</p>
                 </div>
 
                 <!-- Eduteria -->
                 <div onclick="showSubPage('eduteriaView')" class="grid-card">
                     <div class="grid-icon-box"><img src="eduteria.png" alt="Eduteria"></div>
                     <h3 class="grid-title">Eduteria</h3>
+                    <p class="grid-sub">Current Affairs</p>
                 </div>
 
                 <!-- Futurekul -->
                 <div onclick="showSubPage('futurekulView')" class="grid-card">
                     <div class="grid-icon-box"><img src="futurekul.png" alt="Futurekul"></div>
                     <h3 class="grid-title">Futurekul</h3>
+                    <p class="grid-sub">Rakesh Yadav Sir</p>
                 </div>
 
             </div>
