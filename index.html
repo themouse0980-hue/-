@@ -81,7 +81,76 @@
 
         .footer-note { text-align: center; margin-top: 30px; font-size: 11px; color: #dddddd; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
 
-        /* POP-UP INTERSTITIAL MODAL DESIGN (MATCHING SCREENSHOT) */
+        /* SIDEBAR DRAWER MENU STYLING (MATCHING SECOND IMAGE) */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+        .sidebar-drawer {
+            position: fixed;
+            top: 0; left: -280px;
+            width: 270px; height: 100%;
+            background: #141418;
+            border-right: 1px solid rgba(255, 186, 8, 0.3);
+            z-index: 1001;
+            transition: left 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 16px;
+            box-sizing: border-box;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.8);
+        }
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 16px;
+        }
+        .sidebar-logo {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            border: 2px solid #ffba08;
+            background: #0b0b0c;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px;
+            overflow: hidden;
+        }
+        .sidebar-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .sidebar-title-area h3 { margin: 0; font-size: 14px; font-weight: 800; color: #ffba08; }
+        .sidebar-title-area p { margin: 2px 0 0 0; font-size: 10px; color: #aaaaaa; }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 10px 0 8px 0;
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .sidebar-item:active { background: rgba(255, 186, 8, 0.15); border-color: #ffba08; }
+        .sidebar-item-left { display: flex; align-items: center; gap: 10px; }
+
+        /* POP-UP INTERSTITIAL MODAL DESIGN */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -112,32 +181,24 @@
         }
         .modal-close {
             position: absolute;
-            top: 14px;
-            right: 14px;
-            width: 32px;
-            height: 32px;
+            top: 14px; right: 14px;
+            width: 32px; height: 32px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: #ffba08;
             font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             cursor: pointer;
         }
         .modal-logo {
-            width: 72px;
-            height: 72px;
+            width: 72px; height: 72px;
             border-radius: 50%;
             border: 2px solid #ffba08;
             margin: 0 auto 12px auto;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(255, 186, 8, 0.4);
             background: #0b0b0c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
         }
         .modal-logo img { width: 100%; height: 100%; object-fit: cover; }
         .modal-title { font-size: 18px; font-weight: 800; color: #ffba08; margin: 0 0 4px 0; letter-spacing: 0.5px; }
@@ -154,65 +215,29 @@
             margin-bottom: 18px;
         }
         .btn-whatsapp {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 13px;
-            border-radius: 14px;
-            background: #22c55e;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            margin-bottom: 10px;
-            box-sizing: border-box;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            width: 100%; padding: 13px; border-radius: 14px;
+            background: #22c55e; color: #ffffff; font-weight: 700; font-size: 14px;
+            text-decoration: none; margin-bottom: 10px; box-sizing: border-box;
             box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
         .btn-telegram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 13px;
-            border-radius: 14px;
-            background: #0088cc;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            margin-bottom: 10px;
-            box-sizing: border-box;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            width: 100%; padding: 13px; border-radius: 14px;
+            background: #0088cc; color: #ffffff; font-weight: 700; font-size: 14px;
+            text-decoration: none; margin-bottom: 10px; box-sizing: border-box;
             box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
         }
         .btn-enter {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            width: 100%;
-            padding: 13px;
-            border-radius: 14px;
-            background: #ffba08;
-            color: #0b0b0c;
-            font-weight: 800;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 12px;
-            box-sizing: border-box;
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            width: 100%; padding: 13px; border-radius: 14px;
+            background: #ffba08; color: #0b0b0c; font-weight: 800; font-size: 14px;
+            border: none; cursor: pointer; margin-bottom: 12px; box-sizing: border-box;
             box-shadow: 0 4px 15px rgba(255, 186, 8, 0.35);
         }
         .btn-later {
-            background: none;
-            border: none;
-            color: #aaaaaa;
-            font-size: 12.5px;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 4px 12px;
+            background: none; border: none; color: #aaaaaa;
+            font-size: 12.5px; font-weight: 600; cursor: pointer; padding: 4px 12px;
         }
         .btn-later:hover { color: #ffffff; }
     </style>
@@ -221,12 +246,45 @@
 
     <!-- Top Navigation Bar -->
     <div class="top-bar">
-        <div class="menu-btn" id="topMenuBtn">⋮</div>
+        <div class="menu-btn" onclick="toggleSidebar()">⋮</div>
         <div class="site-title-top" id="topTitle">NK STUDY HUB</div>
-        <div class="menu-btn" style="border-color: rgba(255,186,8,0.4);">🔔</div>
+        <div class="menu-btn" style="border-color: rgba(255,186,8,0.4);" onclick="toggleSidebar()">🔔</div>
     </div>
 
-    <!-- POP-UP MODAL BEFORE OPENING ANY BATCH -->
+    <!-- SIDEBAR DRAWER MENU -->
+    <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <div id="sidebarDrawer" class="sidebar-drawer">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">👑</div>
+            <div class="sidebar-title-area">
+                <h3>NK STUDY HUB</h3>
+                <p>destiny decide destination 🌿</p>
+            </div>
+        </div>
+
+        <div class="sidebar-section-title">Navigation</div>
+        <a href="#" onclick="toggleSidebar(); showHomePage(); return false;" class="sidebar-item">
+            <div class="sidebar-item-left">
+                <span>🏠</span> All Batches
+            </div>
+        </a>
+
+        <div class="sidebar-section-title" style="margin-top: 16px;">Join Our Socials</div>
+        <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="sidebar-item">
+            <div class="sidebar-item-left">
+                <span style="color: #22c55e;">💬</span> WhatsApp Channel
+            </div>
+            <span style="font-size: 11px; color: #888;">↗</span>
+        </a>
+        <a href="https://t.me/+ci3EnMDrgswxMjc1" target="_blank" class="sidebar-item">
+            <div class="sidebar-item-left">
+                <span style="color: #0088cc;">✈️</span> Telegram Group
+            </div>
+            <span style="font-size: 11px; color: #888;">↗</span>
+        </a>
+    </div>
+
+    <!-- POP-UP INTERSTITIAL MODAL DESIGN -->
     <div id="gateModal" class="modal-overlay">
         <div class="modal-card">
             <div class="modal-close" onclick="proceedToTarget()">✕</div>
@@ -271,7 +329,7 @@
                 <div class="sub-title">EDUCATION MUST BE FREE FOR EVERYONE</div>
             </div>
 
-            <!-- Telegram Banner (No Border Box) -->
+            <!-- Telegram Banner -->
             <a href="https://t.me/+ci3EnMDrgswxMjc1" target="_blank" class="social-banner">
                 <div class="social-banner-left">
                     <div class="social-icon">📢</div>
@@ -283,7 +341,7 @@
                 <div class="social-arrow">➔</div>
             </a>
 
-            <!-- VIP Channel Banner (No Border Box) -->
+            <!-- VIP Channel Banner -->
             <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="social-banner">
                 <div class="social-banner-left">
                     <div class="social-icon" style="border-color: #ef4444; color: #ef4444;">💬</div>
@@ -848,10 +906,22 @@
         </div>
     </div>
 
-    <!-- JavaScript for Gate Modal, Search Filtering and Page Navigation -->
+    <!-- JavaScript for Sidebar Drawer, Gate Modal, and Navigation -->
     <script>
         let pendingType = '';
         let pendingTarget = '';
+
+        function toggleSidebar() {
+            let drawer = document.getElementById('sidebarDrawer');
+            let overlay = document.getElementById('sidebarOverlay');
+            if (drawer.style.left === '0px') {
+                drawer.style.left = '-280px';
+                overlay.style.display = 'none';
+            } else {
+                drawer.style.left = '0px';
+                overlay.style.display = 'block';
+            }
+        }
 
         function openGate(type, target, title, logoSrc) {
             pendingType = type;
@@ -892,8 +962,6 @@
 
             document.getElementById(pageId).style.display = 'block';
             document.getElementById('topTitle').innerText = 'NK STUDY HUB';
-            document.getElementById('topMenuBtn').innerHTML = '←';
-            document.getElementById('topMenuBtn').onclick = showHomePage;
             window.scrollTo(0, 0);
         }
 
@@ -901,10 +969,7 @@
             let pages = document.getElementsByClassName('sub-page');
             for(let p of pages) { p.style.display = 'none'; }
             document.getElementById('homeView').style.display = 'block';
-            
             document.getElementById('topTitle').innerText = 'NK STUDY HUB';
-            document.getElementById('topMenuBtn').innerHTML = '⋮';
-            document.getElementById('topMenuBtn').onclick = null;
             window.scrollTo(0, 0);
         }
     </script>
