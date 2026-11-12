@@ -52,7 +52,7 @@
         .search-box input { border: none; outline: none; width: 100%; font-size: 13px; background: transparent; margin-left: 10px; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.9); }
         .search-box input::placeholder { color: #dddddd; }
 
-        /* TRANSPARENT PLATFORM GRID SYSTEM (HOME) - NO BLACK BOXES */
+        /* TRANSPARENT PLATFORM GRID SYSTEM (HOME) */
         .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 12px; }
         .grid-card { background: transparent; border: none; border-radius: 0; padding: 10px; text-align: center; text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .grid-card:active .grid-icon-box { transform: scale(0.93); border-color: #ffffff; }
@@ -80,6 +80,141 @@
         .back-pill-btn:active { background: rgba(255, 186, 8, 0.4); }
 
         .footer-note { text-align: center; margin-top: 30px; font-size: 11px; color: #dddddd; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
+
+        /* POP-UP INTERSTITIAL MODAL DESIGN (MATCHING SCREENSHOT) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        .modal-card {
+            background: #141418;
+            border: 1.5px solid #ffba08;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 360px;
+            padding: 24px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 35px rgba(255, 186, 8, 0.25);
+            animation: popIn 0.2s ease-out;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffba08;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .modal-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 2px solid #ffba08;
+            margin: 0 auto 12px auto;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 186, 8, 0.4);
+            background: #0b0b0c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-title { font-size: 18px; font-weight: 800; color: #ffba08; margin: 0 0 4px 0; letter-spacing: 0.5px; }
+        .modal-badge { font-size: 11px; font-weight: 700; color: #ffffff; margin: 0 0 16px 0; letter-spacing: 1px; }
+        .modal-info-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 12px;
+            text-align: left;
+            font-size: 11.5px;
+            color: #e2e2e2;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 13px;
+            border-radius: 14px;
+            background: #22c55e;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 13px;
+            border-radius: 14px;
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+        }
+        .btn-enter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            padding: 13px;
+            border-radius: 14px;
+            background: #ffba08;
+            color: #0b0b0c;
+            font-weight: 800;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(255, 186, 8, 0.35);
+        }
+        .btn-later {
+            background: none;
+            border: none;
+            color: #aaaaaa;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 12px;
+        }
+        .btn-later:hover { color: #ffffff; }
     </style>
 </head>
 <body>
@@ -89,6 +224,40 @@
         <div class="menu-btn" id="topMenuBtn">⋮</div>
         <div class="site-title-top" id="topTitle">NK STUDY HUB</div>
         <div class="menu-btn" style="border-color: rgba(255,186,8,0.4);">🔔</div>
+    </div>
+
+    <!-- POP-UP MODAL BEFORE OPENING ANY BATCH -->
+    <div id="gateModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-close" onclick="proceedToTarget()">✕</div>
+            <div class="modal-logo">
+                <img id="modalLogoImg" src="selection.png" alt="Logo">
+            </div>
+            <h3 class="modal-title" id="modalPlatformTitle">NK STUDY HUB</h3>
+            <div class="modal-badge">👑 OFFICIAL PORTAL</div>
+            
+            <div class="modal-info-box">
+                📚 Free Class Notes, PDFs &amp; Live Updates<br>
+                📝 सभी प्रतियोगी परीक्षाओं के लिए 100% फ्री सहायता<br>
+                💡 Official Platform • Dream Plan Focus Achieve 🌿
+            </div>
+
+            <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="btn-whatsapp">
+                💬 Join Our WhatsApp Channel
+            </a>
+
+            <a href="https://t.me/+ci3EnMDrgswxMjc1" target="_blank" class="btn-telegram">
+                ✈️ Join Our Telegram Channel
+            </a>
+
+            <button onclick="proceedToTarget()" class="btn-enter">
+                ✨ Enter Portal
+            </button>
+
+            <button onclick="proceedToTarget()" class="btn-later">
+                Maybe later
+            </button>
+        </div>
     </div>
 
     <div class="container">
@@ -108,7 +277,7 @@
                     <div class="social-icon">📢</div>
                     <div class="social-text">
                         <h4>Join Our Telegram</h4>
-                        <p>Free PDFs & Live Updates</p>
+                        <p>Free PDFs &amp; Live Updates</p>
                     </div>
                 </div>
                 <div class="social-arrow">➔</div>
@@ -132,116 +301,116 @@
                 <input type="text" id="searchInput" placeholder="Search platforms or courses..." onkeyup="filterPlatforms()">
             </div>
 
-            <!-- Transparent Circular Platform Grid (No Black Boxes) -->
+            <!-- Transparent Circular Platform Grid -->
             <div class="grid-container" id="platformGrid">
                 
                 <!-- Selection Way -->
-                <div onclick="showSubPage('selectionWayView')" class="grid-card" data-name="selection way sw vivid studybison">
+                <div onclick="openGate('subpage', 'selectionWayView', 'Selection Way', 'selection.png')" class="grid-card" data-name="selection way sw vivid studybison">
                     <div class="grid-icon-box"><img src="selection.png" alt="Selection Way"></div>
                     <h3 class="grid-title">Selection Way</h3>
-                    <p class="grid-sub">Live & Recorded</p>
+                    <p class="grid-sub">Live &amp; Recorded</p>
                 </div>
 
                 <!-- RWA -->
-                <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="grid-card" data-name="rwa batch रोजगार विद अंकित">
+                <div onclick="openGate('link', 'https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w', 'RWA Batch', 'rwa.png')" class="grid-card" data-name="rwa batch रोजगार विद अंकित">
                     <div class="grid-icon-box"><img src="rwa.png" alt="RWA"></div>
                     <h3 class="grid-title">RWA Batch</h3>
                     <p class="grid-sub">रोजगार विद अंकित</p>
-                </a>
+                </div>
 
                 <!-- Parmar Academy -->
-                <div onclick="showSubPage('parmarView')" class="grid-card" data-name="parmar ssc academy जीके एसएससी">
+                <div onclick="openGate('subpage', 'parmarView', 'Parmar SSC', 'parmar.jpg')" class="grid-card" data-name="parmar ssc academy जीके एसएससी">
                     <div class="grid-icon-box"><img src="parmar.jpg" alt="Parmar Academy"></div>
                     <h3 class="grid-title">Parmar SSC</h3>
-                    <p class="grid-sub">जीके & एसएससी</p>
+                    <p class="grid-sub">जीके &amp; एसएससी</p>
                 </div>
 
                 <!-- PW -->
-                <div onclick="showSubPage('pwView')" class="grid-card" data-name="physicswallah pw live streams">
+                <div onclick="openGate('subpage', 'pwView', 'PhysicsWallah', 'pw.jpg')" class="grid-card" data-name="physicswallah pw live streams">
                     <div class="grid-icon-box"><img src="pw.jpg" alt="PW"></div>
                     <h3 class="grid-title">PhysicsWallah</h3>
                     <p class="grid-sub">PW Live Streams</p>
                 </div>
 
                 <!-- Science Magnet -->
-                <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="grid-card" data-name="science magnet neeraj sir">
+                <div onclick="openGate('link', 'https://troubled-beige-d2ktwr2j.edgeone.dev/', 'Science Magnet', 'science.png')" class="grid-card" data-name="science magnet neeraj sir">
                     <div class="grid-icon-box"><img src="science.png" alt="Science Magnet"></div>
                     <h3 class="grid-title">Science Magnet</h3>
                     <p class="grid-sub">Neeraj Sir Special</p>
-                </a>
+                </div>
 
                 <!-- Unacademy -->
-                <div onclick="showSubPage('unacademyView')" class="grid-card" data-name="unacademy top educators">
+                <div onclick="openGate('subpage', 'unacademyView', 'Unacademy', 'unacademy.png')" class="grid-card" data-name="unacademy top educators">
                     <div class="grid-icon-box"><img src="unacademy.png" alt="Unacademy"></div>
                     <h3 class="grid-title">Unacademy</h3>
                     <p class="grid-sub">Top Educators</p>
                 </div>
 
                 <!-- Mathematics -->
-                <div onclick="showSubPage('mathsView')" class="grid-card" data-name="mathematics advance arithmetic bhuteshwar aditya ranjan rakesh abhinay">
+                <div onclick="openGate('subpage', 'mathsView', 'Mathematics', 'mathmat.jpg')" class="grid-card" data-name="mathematics advance arithmetic bhuteshwar aditya ranjan rakesh abhinay">
                     <div class="grid-icon-box"><img src="mathmat.jpg" alt="Mathematics"></div>
                     <h3 class="grid-title">Mathematics</h3>
-                    <p class="grid-sub">Advance & Arithmetic</p>
+                    <p class="grid-sub">Advance &amp; Arithmetic</p>
                 </div>
 
                 <!-- Sachin Academy -->
-                <div onclick="showSubPage('sachinView')" class="grid-card" data-name="sachin academy ctet teaching">
+                <div onclick="openGate('subpage', 'sachinView', 'Sachin Academy', 'sachin.jpg')" class="grid-card" data-name="sachin academy ctet teaching">
                     <div class="grid-icon-box"><img src="sachin.jpg" alt="Sachin Academy"></div>
                     <h3 class="grid-title">Sachin Academy</h3>
-                    <p class="grid-sub">CTET & Teaching</p>
+                    <p class="grid-sub">CTET &amp; Teaching</p>
                 </div>
 
                 <!-- Careerwill -->
-                <div onclick="showSubPage('careerwillView')" class="grid-card" data-name="careerwill gagan pratap">
+                <div onclick="openGate('subpage', 'careerwillView', 'Careerwill', 'cw.png')" class="grid-card" data-name="careerwill gagan pratap">
                     <div class="grid-icon-box"><img src="cw.png" alt="Careerwill"></div>
                     <h3 class="grid-title">Careerwill</h3>
                     <p class="grid-sub">Gagan Pratap Sir</p>
                 </div>
 
                 <!-- Study IQ -->
-                <div onclick="showSubPage('studyiqView')" class="grid-card" data-name="study iq upsc ias">
+                <div onclick="openGate('subpage', 'studyiqView', 'Study IQ', 'studyiq.jpg')" class="grid-card" data-name="study iq upsc ias">
                     <div class="grid-icon-box"><img src="studyiq.jpg" alt="Study IQ"></div>
                     <h3 class="grid-title">Study IQ</h3>
-                    <p class="grid-sub">UPSC & IAS Batches</p>
+                    <p class="grid-sub">UPSC &amp; IAS Batches</p>
                 </div>
 
                 <!-- Vidyagram -->
-                <div onclick="showSubPage('vidyagramView')" class="grid-card" data-name="vidyagram special classes">
+                <div onclick="openGate('subpage', 'vidyagramView', 'Vidyagram', 'vidyagram.jpg')" class="grid-card" data-name="vidyagram special classes">
                     <div class="grid-icon-box"><img src="vidyagram.jpg" alt="Vidyagram"></div>
                     <h3 class="grid-title">Vidyagram</h3>
                     <p class="grid-sub">Special Classes</p>
                 </div>
 
                 <!-- KGS -->
-                <div onclick="showSubPage('kgsView')" class="grid-card" data-name="khan global studies kgs">
+                <div onclick="openGate('subpage', 'kgsView', 'Khan Global Studies', 'kgs.png')" class="grid-card" data-name="khan global studies kgs">
                     <div class="grid-icon-box"><img src="kgs.png" alt="KGS"></div>
                     <h3 class="grid-title">Khan Global Studies</h3>
                     <p class="grid-sub">KGS Official</p>
                 </div>
 
                 <!-- Next Toppers -->
-                <div onclick="showSubPage('nexttoppersView')" class="grid-card" data-name="next toppers engineers ae je">
+                <div onclick="openGate('subpage', 'nexttoppersView', 'Next Toppers', 'nexttoppers.png')" class="grid-card" data-name="next toppers engineers ae je">
                     <div class="grid-icon-box"><img src="nexttoppers.png" alt="Next Toppers"></div>
                     <h3 class="grid-title">Next Toppers</h3>
-                    <p class="grid-sub">Engineers & AE/JE</p>
+                    <p class="grid-sub">Engineers &amp; AE/JE</p>
                 </div>
 
                 <!-- Mission Jeet -->
-                <div onclick="showSubPage('missionjeetView')" class="grid-card" data-name="mission jeet defence exams">
+                <div onclick="openGate('subpage', 'missionjeetView', 'Mission Jeet', 'missionjeet.png')" class="grid-card" data-name="mission jeet defence exams">
                     <div class="grid-icon-box"><img src="missionjeet.png" alt="Mission Jeet"></div>
                     <h3 class="grid-title">Mission Jeet</h3>
-                    <p class="grid-sub">Defence & Exams</p>
+                    <p class="grid-sub">Defence &amp; Exams</p>
                 </div>
 
                 <!-- Eduteria -->
-                <div onclick="showSubPage('eduteriaView')" class="grid-card" data-name="eduteria current affairs">
+                <div onclick="openGate('subpage', 'eduteriaView', 'Eduteria', 'eduteria.png')" class="grid-card" data-name="eduteria current affairs">
                     <div class="grid-icon-box"><img src="eduteria.png" alt="Eduteria"></div>
                     <h3 class="grid-title">Eduteria</h3>
                     <p class="grid-sub">Current Affairs</p>
                 </div>
 
                 <!-- Futurekul -->
-                <div onclick="showSubPage('futurekulView')" class="grid-card" data-name="futurekul rakesh yadav">
+                <div onclick="openGate('subpage', 'futurekulView', 'Futurekul', 'futurekul.png')" class="grid-card" data-name="futurekul rakesh yadav">
                     <div class="grid-icon-box"><img src="futurekul.png" alt="Futurekul"></div>
                     <h3 class="grid-title">Futurekul</h3>
                     <p class="grid-sub">Rakesh Yadav Sir</p>
@@ -279,7 +448,7 @@
                 </a>
                 <a href="https://testrankingfree.vercel.app" target="_blank" class="circle-item">
                     <div class="circle-ring">📝</div>
-                    <h3 class="circle-title">Test & Ranking</h3>
+                    <h3 class="circle-title">Test &amp; Ranking</h3>
                     <p class="circle-sub">Server 5</p>
                 </a>
                 <a href="https://nexthope.cc.cd/sw/" target="_blank" class="circle-item">
@@ -679,8 +848,28 @@
         </div>
     </div>
 
-    <!-- JavaScript for Search Filtering and Page Navigation -->
+    <!-- JavaScript for Gate Modal, Search Filtering and Page Navigation -->
     <script>
+        let pendingType = '';
+        let pendingTarget = '';
+
+        function openGate(type, target, title, logoSrc) {
+            pendingType = type;
+            pendingTarget = target;
+            document.getElementById('modalPlatformTitle').innerText = title.toUpperCase();
+            document.getElementById('modalLogoImg').src = logoSrc;
+            document.getElementById('gateModal').style.display = 'flex';
+        }
+
+        function proceedToTarget() {
+            document.getElementById('gateModal').style.display = 'none';
+            if (pendingType === 'subpage') {
+                showSubPage(pendingTarget);
+            } else if (pendingType === 'link') {
+                window.open(pendingTarget, '_blank');
+            }
+        }
+
         function filterPlatforms() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('grid-card');
