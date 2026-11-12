@@ -43,15 +43,14 @@
         .grid-icon-box img { width: 100%; height: 100%; object-fit: cover; }
         .grid-title { font-size: 13px; font-weight: 700; color: #ffffff; margin: 0; }
 
-        /* Sub-page / Teachers view styling */
+        /* Sub-page / List view styling */
         .sub-page { display: none; }
-        .back-btn { background: #161618; border: 1px solid #ffba08; color: #ffba08; padding: 6px 12px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: bold; cursor: pointer; }
         .section-title { font-size: 16px; font-weight: 800; color: #ffba08; margin: 15px 0; text-align: center; }
         .list-container { display: flex; flex-direction: column; gap: 10px; }
         .list-card { background: #121214; border: 1px solid #222226; border-radius: 14px; padding: 14px 16px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
         .list-card:active { border-color: #ffba08; }
-        .teacher-info h3 { margin: 0; font-size: 14px; font-weight: 700; color: #ffffff; }
-        .teacher-info p { margin: 3px 0 0 0; font-size: 10px; color: #888; text-transform: uppercase; font-weight: 600; }
+        .item-info h3 { margin: 0; font-size: 14px; font-weight: 700; color: #ffffff; }
+        .item-info p { margin: 3px 0 0 0; font-size: 10px; color: #888; text-transform: uppercase; font-weight: 600; }
         .arrow-box { width: 26px; height: 26px; background: #1a1a1c; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #ffba08; border: 1px solid #26262a; }
 
         .footer-note { text-align: center; margin-top: 30px; font-size: 11px; color: #555555; font-weight: 600; }
@@ -110,11 +109,11 @@
             <!-- 2-Column App Grid -->
             <div class="grid-container">
                 
-                <!-- Selection Way -->
-                <a href="https://selectionwayvivid.edgeone.dev/" target="_blank" class="grid-card">
+                <!-- Selection Way (Opens Selection Way Sub-View) -->
+                <div onclick="showSelectionWayPage()" class="grid-card">
                     <div class="grid-icon-box"><img src="selection.png" alt="Selection Way"></div>
                     <h3 class="grid-title">Selection Way</h3>
-                </a>
+                </div>
 
                 <!-- RWA -->
                 <a href="https://whatsapp.com/channel/0029VbDI1imKbYMSc9eV143w" target="_blank" class="grid-card">
@@ -146,7 +145,7 @@
                     <h3 class="grid-title">Unacademy</h3>
                 </a>
 
-                <!-- Mathematics (Opens Mathematics Sub-View inside same page) -->
+                <!-- Mathematics (Opens Mathematics Sub-View) -->
                 <div onclick="showMathsPage()" class="grid-card">
                     <div class="grid-icon-box"><img src="maths.png" alt="Mathematics"></div>
                     <h3 class="grid-title">Mathematics</h3>
@@ -209,13 +208,60 @@
             </div>
         </div>
 
-        <!-- MATHEMATICS SUB-PAGE VIEW (Hidden by default) -->
+        <!-- SELECTION WAY SUB-PAGE VIEW -->
+        <div id="selectionWayView" class="sub-page">
+            <div class="section-title">Select Selection Way Server</div>
+            
+            <div class="list-container">
+                <a href="https://selectionwayvivid.edgeone.dev/" target="_blank" class="list-card">
+                    <div class="item-info">
+                        <h3>Selection Way Server 1</h3>
+                        <p>EDGEONE SERVER</p>
+                    </div>
+                    <div class="arrow-box">➔</div>
+                </a>
+
+                <a href="https://sw-studybison.space-z.ai/" target="_blank" class="list-card">
+                    <div class="item-info">
+                        <h3>Selection Way Server 2</h3>
+                        <p>SPACE-Z SERVER</p>
+                    </div>
+                    <div class="arrow-box">➔</div>
+                </a>
+
+                <a href="https://sw.codewithvivek.xyz/" target="_blank" class="list-card">
+                    <div class="item-info">
+                        <h3>Selection Way Server 3</h3>
+                        <p>CODEWITHVIVEK SERVER</p>
+                    </div>
+                    <div class="arrow-box">➔</div>
+                </a>
+
+                <a href="https://nexthope.pages.dev/sw/" target="_blank" class="list-card">
+                    <div class="item-info">
+                        <h3>Selection Way Server 4</h3>
+                        <p>NEXTHOPE SERVER</p>
+                    </div>
+                    <div class="arrow-box">➔</div>
+                </a>
+
+                <a href="https://testrankingfree.vercel.app" target="_blank" class="list-card">
+                    <div class="item-info">
+                        <h3>Selection Way Server 5 (Test/Ranking)</h3>
+                        <p>VERCEL SERVER</p>
+                    </div>
+                    <div class="arrow-box">➔</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- MATHEMATICS SUB-PAGE VIEW -->
         <div id="mathsView" class="sub-page">
             <div class="section-title">Select Teacher / Batch</div>
             
             <div class="list-container">
                 <a href="https://shivering-beige-nufdeci7.edgeone.dev/" target="_blank" class="list-card">
-                    <div class="teacher-info">
+                    <div class="item-info">
                         <h3>Bhuteshwar Sir</h3>
                         <p>COURSE / BATCH</p>
                     </div>
@@ -223,7 +269,7 @@
                 </a>
 
                 <a href="https://stiff-turquoise-szlc17jn.edgeone.dev/" target="_blank" class="list-card">
-                    <div class="teacher-info">
+                    <div class="item-info">
                         <h3>Aditya Ranjan Sir</h3>
                         <p>COURSE / BATCH</p>
                     </div>
@@ -231,7 +277,7 @@
                 </a>
 
                 <a href="https://compatible-peach-nxcc4lra.edgeone.dev/" target="_blank" class="list-card">
-                    <div class="teacher-info">
+                    <div class="item-info">
                         <h3>Rakesh Sir</h3>
                         <p>COURSE / BATCH</p>
                     </div>
@@ -239,7 +285,7 @@
                 </a>
 
                 <a href="https://straight-olive-0gfzpouc.edgeone.dev/" target="_blank" class="list-card">
-                    <div class="teacher-info">
+                    <div class="item-info">
                         <h3>Abhinay Sir</h3>
                         <p>COURSE / BATCH</p>
                     </div>
@@ -247,7 +293,7 @@
                 </a>
 
                 <a href="https://electric-black-ssbibzw7.edgeone.dev/" target="_blank" class="list-card">
-                    <div class="teacher-info">
+                    <div class="item-info">
                         <h3>Maths Mania</h3>
                         <p>COURSE / BATCH</p>
                     </div>
@@ -255,7 +301,7 @@
                 </a>
 
                 <a href="https://wonderful-gold-9eg5wvn9.edgeone.dev/" target="_blank" class="list-card">
-                    <div class="teacher-info">
+                    <div class="item-info">
                         <h3>Spartan Foundation</h3>
                         <p>COURSE / BATCH</p>
                     </div>
@@ -263,7 +309,7 @@
                 </a>
 
                 <a href="https://unchanged-olive-tsad0som.edgeone.dev/" target="_blank" class="list-card">
-                    <div class="teacher-info">
+                    <div class="item-info">
                         <h3>Super 100</h3>
                         <p>COURSE / BATCH</p>
                     </div>
@@ -277,10 +323,20 @@
         </div>
     </div>
 
-    <!-- JavaScript to handle page switching inside same file -->
+    <!-- JavaScript to handle page switching -->
     <script>
+        function showSelectionWayPage() {
+            document.getElementById('homeView').style.display = 'none';
+            document.getElementById('mathsView').style.display = 'none';
+            document.getElementById('selectionWayView').style.display = 'block';
+            document.getElementById('topTitle').innerText = 'SELECTION WAY';
+            document.getElementById('topMenuBtn').innerHTML = '←';
+            document.getElementById('topMenuBtn').onclick = showHomePage;
+        }
+
         function showMathsPage() {
             document.getElementById('homeView').style.display = 'none';
+            document.getElementById('selectionWayView').style.display = 'none';
             document.getElementById('mathsView').style.display = 'block';
             document.getElementById('topTitle').innerText = 'MATHEMATICS';
             document.getElementById('topMenuBtn').innerHTML = '←';
@@ -288,6 +344,7 @@
         }
 
         function showHomePage() {
+            document.getElementById('selectionWayView').style.display = 'none';
             document.getElementById('mathsView').style.display = 'none';
             document.getElementById('homeView').style.display = 'block';
             document.getElementById('topTitle').innerText = 'NK STUDY HUB';
