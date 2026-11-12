@@ -130,16 +130,16 @@
                 </a>
 
                 <!-- Parmar Academy -->
-                <a href="https://exuberant-salmon-nfdtg31d.edgeone.dev/" target="_blank" class="grid-card">
+                <div onclick="showSubPage('parmarView')" class="grid-card">
                     <div class="grid-icon-box"><img src="parmar.jpg" alt="Parmar Academy"></div>
                     <h3 class="grid-title">Parmar Academy</h3>
-                </a>
+                </div>
 
                 <!-- PW -->
-                <a href="https://pw-t1.space-z.ai/" target="_blank" class="grid-card">
+                <div onclick="showSubPage('pwView')" class="grid-card">
                     <div class="grid-icon-box"><img src="pw.jpg" alt="PW"></div>
                     <h3 class="grid-title">PW</h3>
-                </a>
+                </div>
 
                 <!-- Science Magnet -->
                 <a href="https://troubled-beige-d2ktwr2j.edgeone.dev/" target="_blank" class="grid-card">
@@ -252,6 +252,58 @@
                     <div class="circle-ring">💎</div>
                     <h3 class="circle-title">NextHope CC</h3>
                     <p class="circle-sub">Server 6</p>
+                </a>
+            </div>
+            <button onclick="showHomePage()" class="back-pill-btn">← Back to Categories</button>
+        </div>
+
+        <!-- PW SUB-PAGE -->
+        <div id="pwView" class="sub-page">
+            <div class="sub-header">
+                <h2>PW (Physics Wallah)</h2>
+                <p class="sub-highlight">Select Server / Link 👇</p>
+            </div>
+            <div class="circle-grid">
+                <a href="https://pw-t1.space-z.ai/" target="_blank" class="circle-item">
+                    <div class="circle-ring">🌐</div>
+                    <h3 class="circle-title">Space-Z Server</h3>
+                    <p class="circle-sub">Server 1</p>
+                </a>
+                <a href="https://www.learnxpw.site/study/batches" target="_blank" class="circle-item">
+                    <div class="circle-ring">🚀</div>
+                    <h3 class="circle-title">LearnX PW</h3>
+                    <p class="circle-sub">Server 2</p>
+                </a>
+                <a href="https://nexthope.cc.cd/PW/" target="_blank" class="circle-item">
+                    <div class="circle-ring">⚡</div>
+                    <h3 class="circle-title">NextHope PW</h3>
+                    <p class="circle-sub">Server 3</p>
+                </a>
+            </div>
+            <button onclick="showHomePage()" class="back-pill-btn">← Back to Categories</button>
+        </div>
+
+        <!-- PARMAR ACADEMY SUB-PAGE -->
+        <div id="parmarView" class="sub-page">
+            <div class="sub-header">
+                <h2>Parmar Academy</h2>
+                <p class="sub-highlight">Select Server / Link 👇</p>
+            </div>
+            <div class="circle-grid">
+                <a href="https://exuberant-salmon-nfdtg31d.edgeone.dev/" target="_blank" class="circle-item">
+                    <div class="circle-ring">🌐</div>
+                    <h3 class="circle-title">EdgeOne Server</h3>
+                    <p class="circle-sub">Server 1</p>
+                </a>
+                <a href="https://pwnexus.eu.cc/pramar-academy" target="_blank" class="circle-item">
+                    <div class="circle-ring">🚀</div>
+                    <h3 class="circle-title">PW Nexus</h3>
+                    <p class="circle-sub">Server 2</p>
+                </a>
+                <a href="https://choudharymehfil.vercel.app/parmar-4.0.html" target="_blank" class="circle-item">
+                    <div class="circle-ring">⚡</div>
+                    <h3 class="circle-title">Choudhary Mehfil</h3>
+                    <p class="circle-sub">Server 3</p>
                 </a>
             </div>
             <button onclick="showHomePage()" class="back-pill-btn">← Back to Categories</button>
@@ -594,6 +646,8 @@
             // Hide home and all sub-pages
             document.getElementById('homeView').style.display = 'none';
             document.getElementById('selectionWayView').style.display = 'none';
+            document.getElementById('pwView').style.display = 'none';
+            document.getElementById('parmarView').style.display = 'none';
             document.getElementById('mathsView').style.display = 'none';
             document.getElementById('unacademyView').style.display = 'none';
             document.getElementById('sachinView').style.display = 'none';
@@ -616,6 +670,8 @@
 
         function showHomePage() {
             document.getElementById('selectionWayView').style.display = 'none';
+            document.getElementById('pwView').style.display = 'none';
+            document.getElementById('parmarView').style.display = 'none';
             document.getElementById('mathsView').style.display = 'none';
             document.getElementById('unacademyView').style.display = 'none';
             document.getElementById('sachinView').style.display = 'none';
